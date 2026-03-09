@@ -1,5 +1,11 @@
 // ========== PAGE NAVIGATION ==========
 
+let file = undefined;
+console.log(file.fsPath);
+
+if (file && file.fsPath) {
+}
+
 function showPage(pageId) {
     // Hide all page sections
     const allPages = document.querySelectorAll('section.page-section');
