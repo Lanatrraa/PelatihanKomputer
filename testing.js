@@ -1,10 +1,6 @@
 // ========== PAGE NAVIGATION ==========
 
-let file = undefined;
-console.log(file.fsPath);
 
-if (file && file.fsPath) {
-}
 
 function showPage(pageId) {
     // Hide all page sections
@@ -629,13 +625,13 @@ function registerUser() {
         if (data.error) {
             alert('Error: ' + data.error);
         } else {
-            alert('Pendaftaran berhasil! Anda akan diarahkan ke halaman Pembayaran.');
+            alert('Pendaftaran berhasil! Silakan akses halaman Pembayaran untuk melanjutkan proses pembayaran.');
             // Tutup modal daftar
             closeModal('modalDaftar');
             // Reset form
             document.getElementById('formDaftar').reset();
-            // Redirect ke halaman pembayaran
-            showPage('pembayaran');
+            // Kembali ke halaman beranda atau tetap di halaman saat ini
+            // Tidak redirect otomatis ke halaman pembayaran
         }
     })
     .catch(error => {
@@ -851,3 +847,4 @@ function backToRegistration() {
     closeModal('modalPembayaran');
     openModal('modalDaftar');
 }
+

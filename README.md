@@ -23,7 +23,7 @@ Website frontend dengan backend Node.js dan database SQLite untuk sistem pendaft
 ## 🚀 **Fitur yang Sudah Aktif:**
 
 ### 🎯 **Halaman Utama**
-- ✅ Website index.html terbuka dengan benar
+- ✅ Website testing.html terbuka dengan benar
 - ✅ Tidak ada lagi error "Cannot GET /"
 
 ### 👤 **Sistem Pendaftaran**
@@ -108,7 +108,7 @@ Website frontend dengan backend Node.js dan database SQLite untuk sistem pendaft
 ## File Utama
 
 - `server.js` - Backend server dengan Express.js
-- `index.html` - Halaman utama website
-- `index.css` - Styling website
-- `index.js` - JavaScript untuk interaktivitas frontend
+- `testing.html` - Halaman utama website
+- `testing.css` - Styling website
+- `testing.js` - JavaScript untuk interaktivitas frontend
 - `database.db` - File database SQLite (dibuat otomatis saat server pertama kali dijalankan)

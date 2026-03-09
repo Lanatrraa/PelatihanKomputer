@@ -314,7 +314,7 @@ app.get('/admin', (req, res) => {
 
 // Start server
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'testing.html'));
 });
 
 app.listen(PORT, () => {
