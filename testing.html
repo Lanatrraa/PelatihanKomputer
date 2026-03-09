@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan Komputer Dasar</title>
+    <link rel="stylesheet" href="testing.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="header-logo">
+            <img src="logo-uniska-ok-300x300.png" alt="logo-uniska-ok-300x300.png" class="logo-img">
+        </div>
+        <div class="header-text">
+            <h1>Pelatihan Komputer Dasar</h1>
+            <p>Website Pelatihan Lab Komputer UNISKA</p>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="#" data-page="beranda">Beranda</a>
+    <a href="#" data-page="materi">Materi</a>
+    <a href="#" data-page="pembayaran">Pembayaran</a>
+    <a href="#" data-page="kontak">Kontak</a>
+</nav>
+
+<main>
+    <section id="beranda" class="page-section">
+        <div class="hero-banner">
+            <div class="hero-overlay">
+                <span class="badge-new">Portal Pelatihan UNISKA 2026</span>
+                <h1>Selamat Datang di <br><span class="highlight">Pusat Pelatihan Komputer</span></h1>
+                <p>Silakan daftar untuk memulai perjalanan belajar Anda atau masuk untuk melanjutkan progres materi.</p>
+                
+                <div class="hero-btns">
+                    <button onclick="openModal('modalDaftar')" class="btn-main">Daftar Pelatihan</button>
+                    <button onclick="openModal('modalLogin')" class="btn-outline">Masuk ke Akun</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="opening-text">
+            <div class="text-content">
+                <h3>Tentang Website Kami</h3>
+                <p>Selamat datang di <strong>Platform Pelatihan Komputer UNISKA</strong>. Website ini menyediakan sarana pembelajaran komputer dasar yang komprehensif, dengan materi berkualitas, paket pelatihan fleksibel, dan proses pendaftaran yang mudah.</p>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="card-icon">🎯</div>
+                <h4>Beranda</h4>
+                <p>Informasi umum tentang pelatihan komputer dan akses ke pendaftaran atau login untuk melanjutkan pembelajaran Anda.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">📚</div>
+                <h4>Materi</h4>
+                <p>Pelajari berbagai topik komputer seperti MS Word, Google Sheets, MS PowerPoint, dan Desain Canva dengan mudah dan terstruktur.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">💳</div>
+                <h4>Pembayaran</h4>
+                <p>Pilih paket pelatihan yang sesuai dengan kebutuhan Anda dan lakukan pembayaran dengan metode yang tersedia secara aman.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">📞</div>
+                <h4>Kontak</h4>
+                <p>Hubungi kami melalui berbagai saluran komunikasi untuk mendapatkan informasi, dukungan, dan konsultasi lebih lanjut.</p>
+            </div>
+        </div>
+
+        <div class="photo-gallery-section">
+            <h3>Galeri Foto Kegiatan</h3>
+            <div class="photo-grid">
+                <div class="photo-box">
+                    <img src="44cce91b-7791-4db8-ad01-dad1408215b9.jpg" alt="Foto Kegiatan 1" class="photo-img">
+                </div>
+                <div class="photo-box">
+                    <img src="605bfc5f-37d8-4e1d-9131-1798d096eacc.jpg" alt="Foto Kegiatan 2" class="photo-img">
+                </div>
+                <div class="photo-box">
+                    <img src="de7b10e2-3ffe-458a-8dd7-5eaca7f09925.jpg" alt="Foto Kegiatan 3" class="photo-img">
+                </div>
+                <div class="photo-box">
+                    <img src="b0f29dd2-46c6-4e18-9de0-dcc78b1ff840.jpg" alt="Foto Kegiatan 4" class="photo-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modalDaftar" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalDaftar')">&times;</span>
+            <h2>Form Pendaftaran Pelatihan</h2>
+            <form id="formDaftar">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="namaInput" placeholder="Masukkan nama sesuai KTM" required>
+                </div>
+                <div class="form-group">
+                    <label>NPM</label>
+                    <input type="number" id="npmInput" placeholder="Contoh: 221001..." required>
+                </div>
+                <div class="form-group">
+                    <label>Pilih Program Pelatihan</label>
+                    <select id="programInput">
+                        <option>Microsoft Office Dasar</option>
+                        <option>Google Sheets</option>
+                        <option>PowerPoint</option>
+                        <option>Desain Grafis (Canva/Photoshop)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="emailInput" placeholder="nama@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Kata Sandi</label>
+                    <input type="password" placeholder="Buat kata sandi baru" required>
+                </div>
+                <button type="button" class="btn-main full-width" onclick="registerUser()">Daftar Sekarang</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalLogin" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalLogin')">&times;</span>
+            <h2>Masuk ke Akun</h2>
+            <form id="formLogin">
+                <div class="form-group">
+                    <label>NPM / Email</label>
+                    <input type="text" id="loginIdentifier" placeholder="Masukkan NPM atau Email" required>
+                </div>
+                <div class="form-group">
+                    <label>Kata Sandi</label>
+                    <input type="password" id="loginPassword" placeholder="Masukkan kata sandi" required>
+                </div>
+                <button type="submit" class="btn-main full-width">Masuk</button>
+                <p class="form-footer">Lupa kata sandi? <a href="#">Klik di sini</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalPembayaran" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalPembayaran')">&times;</span>
+            <h2>Pembayaran Pelatihan</h2>
+            
+            <div class="payment-summary">
+                <p><strong>Nama:</strong> <span id="summaryNama">-</span></p>
+                <p><strong>NPM:</strong> <span id="summaryNpm">-</span></p>
+                <p><strong>Program:</strong> <span id="summaryProgram">-</span></p>
+            </div>
+
+            <h3>Pilih Paket Pembayaran</h3>
+            <div class="payment-packages">
+                <div class="package-card" onclick="selectPackage(this, 'basic', 150000)">
+                    <div class="package-header">
+                        <h4>Paket Reguler</h4>
+                        <span class="package-price">Rp 200.000</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Akses Materi Lengkap</li>
+                        <li>✓ Video Tutorial (30 hari)</li>
+                        <li>✓ 1x Sesi Konsultasi</li>
+                        <li>✓ Sertifikat Digital</li>
+                    </ul>
+                    <div class="package-radio">
+                        <input type="radio" name="package" value="basic" class="package-input">
+                    </div>
+                </div>
+
+                <div class="package-card featured" onclick="selectPackage(this, 'premium', 300000)">
+                    <span class="package-badge">Populer</span>
+                    <div class="package-header">
+                        <h4>Paket Premium</h4>
+                        <span class="package-price">Rp 300.000</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Akses Materi Lengkap</li>
+                        <li>✓ Video Tutorial (90 hari)</li>
+                        <li>✓ 4x Sesi Konsultasi</li>
+                        <li>✓ Sertifikat Digital</li>
+                        <li>✓ Akses Forum Eksklusif</li>
+                    </ul>
+                    <div class="package-radio">
+                        <input type="radio" name="package" value="premium" class="package-input">
+                    </div>
+                </div>
+
+                <div class="package-card" onclick="selectPackage(this, 'enterprise', 500000)">
+                    <div class="package-header">
+                        <h4>Paket Enterprise</h4>
+                        <span class="package-price">Rp 500.000</span>
+                    </div>
+                    <ul class="package-features">
+                        <li>✓ Akses Materi Lengkap</li>
+                        <li>✓ Video Tutorial (Unlimited)</li>
+                        <li>✓ Unlimited Konsultasi</li>
+                        <li>✓ Sertifikat Digital + Cetak</li>
+                        <li>✓ Akses Forum Eksklusif</li>
+                        <li>✓ Support Priority</li>
+                    </ul>
+                    <div class="package-radio">
+                        <input type="radio" name="package" value="enterprise" class="package-input">
+                    </div>
+                </div>
+            </div>
+
+            <form id="formPembayaran" style="margin-top: 30px;">
+                <div class="form-group">
+                    <label>Metode Pembayaran</label>
+                    <select id="paymentMethod" required>
+                        <option value="">-- Pilih Metode Pembayaran --</option>
+                        <option value="transfer">Transfer Bank</option>
+                        <option value="ewallet">E-Wallet (GCash/Dana)</option>
+                        <option value="card">Kartu Kredit/Debit</option>
+                        <option value="cash">Bayar Langsung (Cash)</option>
+                    </select>
+                </div>
+
+                <div class="payment-total">
+                    <p><strong>Total Pembayaran:</strong> <span id="totalPrice">Rp 0</span></p>
+                </div>
+
+                <button type="button" class="btn-main full-width" onclick="processPayment()" style="margin-bottom: 10px;">Lanjut Pembayaran</button>
+                <button type="button" class="btn-secondary full-width" onclick="backToRegistration()">Kembali</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+    <section id="materi" class="page-section">
+    <div class="section-header">
+        <h2>Modul Pembelajaran</h2>
+        <p>Pilih materi di bawah ini untuk mulai mempelajari keahlian komputer dasar Anda.</p>
+    </div>
+
+    <div class="materi-grid">
+        <div class="materi-card office">
+            <div class="materi-icon">📄</div>
+            <h3>MS Word </h3>
+            <p>Kuasai pengolahan kata dan angka untuk kebutuhan dokumen akademik dan perhitungan data.</p>
+            <a href="#pembayaran" onclick="selectMaterialForPayment('Word', 'word')" class="btn-learn">Pelajari Materi</a>
+        </div>
+
+        <div class="materi-card sheets">
+            <div class="materi-icon">📊</div>
+            <h3>Google Sheets</h3>
+            <p>Pelajari kolaborasi spreadsheet berbasis cloud secara r eal-time bersama tim kelompok Anda.</p>
+            <a href="#pembayaran" onclick="selectMaterialForPayment('Google Sheets', 'sheets')" class="btn-learn">Pelajari Materi</a>
+        </div>
+
+        <div class="materi-card ppt">
+            <div class="materi-icon">📽️</div>
+            <h3>MS PowerPoint</h3>
+            <p>Sampaikan ide Anda dengan slide presentasi yang terstruktur, menarik, dan profesional.</p>
+            <a href="#pembayaran" onclick="selectMaterialForPayment('PowerPoint', 'powerpoint')" class="btn-learn">Pelajari Materi</a>
+        </div>
+
+        <div class="materi-card canva">
+            <div class="materi-icon">🎨</div>
+            <h3>Desain Canva</h3>
+            <p>Buat poster, infografis, dan media visual kreatif tanpa perlu keahlian desain rumit.</p>
+            <a href="#pembayaran" onclick="selectMaterialForPayment('Canva', 'canva')" class="btn-learn">Pelajari Materi</a>
+        </div>
+    </div>
+
+    <article class="materi-content">
+            
+            <div id="word" class="materi-section">
+                <span class="gs-badge2">Word</span>
+                <h1>Microsoft Word</h1>
+                <p class="intro-text">Microsoft Word adalah aplikasi pengolah kata (word processor) yang digunakan untuk membuat, mengedit, dan memformat dokumen teks secara profesional. Aplikasi ini sangat penting bagi mahasiswa untuk menyusun berbagai dokumen akademik.</p>
+                
+                <div class="info-box">
+                    <p>Mahasiswa diharapkan mampu menyusun dokumen yang sistematis, rapi, dan sesuai dengan kaidah penulisan akademik seperti makalah, laporan, dan skripsi.</p>
+                </div>
+
+                
+
+                <h3>Fitur Utama yang Dipelajari:</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <strong>Formatting</strong>
+                        <p>Pengaturan teks, paragraf, margin, dan ukuran kertas.</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Styles & Heading</strong>
+                        <p>Membuat dokumen terstruktur untuk daftar isi otomatis.</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Objects</strong>
+                        <p>Penyisipan tabel, gambar, grafik, dan simbol.</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Academic Tools</strong>
+                        <p>Header, footer, penomoran halaman, dan daftar pustaka.</p>
+                    </div>
+                </div>
+            </div>
+
+           
+
+                
+
+                
+
+            <hr class="separator">
+
+<div id="sheets" class="gs-section">
+    <div class="gs-header">
+        <span class="gs-badge">Cloud Based</span>
+        <h1>Google Sheets</h1>
+    </div>
+    
+    <p class="gs-intro">
+        Google Sheets adalah aplikasi pengolah angka (spreadsheet) berbasis cloud yang dikembangkan oleh Google. 
+        Aplikasi ini memungkinkan mahasiswa mengolah data secara online dan terintegrasi langsung dengan akun Google tanpa perlu instalasi software.
+    </p>
+
+    
+
+    <h3>Fungsi Utama Google Sheets</h3>
+    <div class="gs-grid">
+        <div class="gs-card">
+            <div class="gs-icon">📊</div>
+            <div class="gs-text">
+                <h5>Manajemen Data</h5>
+                <p>Menyusun data nilai, jadwal kuliah, dan data penelitian dalam bentuk tabel yang rapi.</p>
+            </div>
+        </div>
+
+        <div class="gs-card">
+            <div class="gs-icon">👥</div>
+            <div class="gs-text">
+                <h5>Kolaborasi Real-Time</h5>
+                <p>Bekerja pada file yang sama bersama teman kelompok secara bersamaan tanpa kirim file berulang kali.</p>
+            </div>
+        </div>
+
+        <div class="gs-card">
+            <div class="gs-icon">☁️</div>
+            <div class="gs-text">
+                <h5>Akses Berbasis Cloud</h5>
+                <p>File tersimpan otomatis di Google Drive, mencegah kehilangan data dan dapat diakses dari mana saja.</p>
+            </div>
+        </div>
+
+        <div class="gs-card">
+            <div class="gs-icon">🔗</div>
+            <div class="gs-text">
+                <h5>Ekosistem Google</h5>
+                <p>Integrasi penuh dengan Google Forms untuk pengumpulan survei dan Google Docs untuk laporan.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gs-access-box">
+        <h4>Berbagi dan Kontrol Akses</h4>
+        <p>Mahasiswa dapat mengatur hak akses file secara fleksibel:</p>
+        <div class="gs-roles">
+            <span>👁️ Viewer</span>
+            <span>💬 Commenter</span>
+            <span>✏️ Editor</span>
+        </div>
+    </div>
+</div>
+
+<hr class="separator">
+
+<div id="powerpoint" class="ppt-section">
+    <div class="ppt-header">
+        <span class="ppt-tag">Visual Media</span>
+        <h1>Microsoft PowerPoint</h1>
+    </div>
+    
+    <p class="ppt-description">
+        Presentasi PowerPoint adalah media presentasi digital yang digunakan untuk menyampaikan informasi secara visual, terstruktur, dan menarik. 
+        Aplikasi ini adalah standar utama dalam kegiatan akademik seperti seminar, diskusi kelas, dan ujian presentasi.
+    </p>
+
+    
+
+    <h3>Fungsi Utama PowerPoint</h3>
+    <div class="ppt-feature-container">
+        <div class="ppt-row">
+            <div class="ppt-box">
+                <h5>📊 Visualisasi Data</h5>
+                <p>Meringkas materi panjang menjadi poin-poin penting menggunakan grafik, diagram, dan tabel.</p>
+            </div>
+            <div class="ppt-box">
+                <h5>🏗️ Struktur Sistematis</h5>
+                <p>Menyusun urutan slide secara logis agar informasi mudah dipahami oleh audiens.</p>
+            </div>
+        </div>
+
+        <div class="ppt-row">
+            <div class="ppt-box">
+                <h5>✨ Daya Tarik Visual</h5>
+                <p>Menggunakan tema, transisi, dan animasi untuk menjaga perhatian audiens tetap fokus.</p>
+            </div>
+            <div class="ppt-box">
+                <h5>📽️ Integrasi Media</h5>
+                <p>Menyisipkan audio, video, dan hyperlink untuk presentasi yang lebih interaktif.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ppt-collaboration-note">
+        <p><strong>💡 Tips Kerja Kelompok:</strong> File PowerPoint dapat dikerjakan bersama secara offline maupun online, memudahkan kolaborasi tugas laporan atau penelitian tim.</p>
+    </div>
+
+    <div class="ppt-summary">
+        <p><strong>Kesimpulan:</strong> PowerPoint membantu mahasiswa meningkatkan kemampuan komunikasi akademik dan profesional melalui penyampaian informasi yang jelas dan efektif.</p>
+    </div>
+</div>
+
+<hr class="separator">
+
+<div id="canva" class="cnv-section">
+    <div class="cnv-header-wrapper">
+        <div class="cnv-title-area">
+            <span class="cnv-label">Creative Tool</span>
+            <h1>Canva for Education</h1>
+        </div>
+    </div>
+    
+    <p class="cnv-intro">
+        Canva adalah aplikasi desain grafis berbasis online yang memudahkan mahasiswa membuat materi visual profesional tanpa perlu keahlian desain rumit. 
+        Sangat ideal untuk pembuatan poster, infografis, dan media pembelajaran interaktif.
+    </p>
+
+    
+
+    <div class="cnv-feature-showcase">
+        <div class="cnv-feature-card">
+            <div class="cnv-card-icon">🎨</div>
+            <h5>Template Praktis</h5>
+            <p>Ribuan template siap pakai untuk presentasi dan poster akademik.</p>
+        </div>
+        <div class="cnv-feature-card">
+            <div class="cnv-card-icon">✨</div>
+            <h5>Elemen Visual</h5>
+            <p>Akses ke jutaan ikon, ilustrasi, dan font premium untuk mempercantik tugas.</p>
+        </div>
+        <div class="cnv-feature-card">
+            <div class="cnv-card-icon">🤝</div>
+            <h5>Kolaborasi Tim</h5>
+            <p>Fitur pengeditan bersama secara real-time untuk pengerjaan tugas kelompok.</p>
+        </div>
+        <div class="cnv-feature-card">
+            <div class="cnv-card-icon">📥</div>
+            <h5>Multi-Format</h5>
+            <p>Ekspor hasil desain ke format PDF, PPT, JPG, hingga video MP4.</p>
+        </div>
+    </div>
+
+    <div class="cnv-cloud-box">
+        <div class="cnv-cloud-content">
+            <h4>Penyimpanan Berbasis Cloud</h4>
+            <p>Desain tersimpan otomatis dan dapat diakses melalui browser atau aplikasi mobile kapan pun Anda butuhkan.</p>
+        </div>
+    </div>
+
+    <div class="cnv-conclusion">
+        <p><strong>Kesimpulan:</strong> Canva membantu mahasiswa meningkatkan kualitas visual tugas kuliah agar informasi tersampaikan secara lebih menarik dan efektif.</p>
+    </div>
+</div>
+
+        </article>
+    </section>
+
+<section id="pembayaran" class="page-section">
+    <div class="payment-section-header">
+        <h2>Paket Pembayaran Pelatihan</h2>
+        <p id="materiPilihan" style="color: #2c7be5; font-weight: 600; font-size: 1.1rem; margin-bottom: 20px;">Pilih materi Anda terlebih dahulu</p>
+        <p>Pilih paket yang sesuai dengan kebutuhan Anda dan mulai belajar sekarang juga</p>
+    </div>
+
+    <div class="payment-container-section">
+        <div class="materi-selection-section">
+            <h3>Pilih Materi Pelatihan</h3>
+            <div class="materi-selection-grid">
+                <div class="materi-selection-card" onclick="selectMaterialFromPayment(this, 'Word', 'word')">
+                    <div class="materi-selection-icon">📄</div>
+                    <h4>MS Word</h4>
+                    <p>Pengolahan kata profesional</p>
+                    <input type="radio" name="materiSelection" value="word" class="materi-selection-radio">
+                </div>
+                <div class="materi-selection-card" onclick="selectMaterialFromPayment(this, 'Google Sheets', 'sheets')">
+                    <div class="materi-selection-icon">📊</div>
+                    <h4>Google Sheets</h4>
+                    <p>Spreadsheet berbasis cloud</p>
+                    <input type="radio" name="materiSelection" value="sheets" class="materi-selection-radio">
+                </div>
+                <div class="materi-selection-card" onclick="selectMaterialFromPayment(this, 'PowerPoint', 'powerpoint')">
+                    <div class="materi-selection-icon">📽️</div>
+                    <h4>MS PowerPoint</h4>
+                    <p>Presentasi yang menarik</p>
+                    <input type="radio" name="materiSelection" value="powerpoint" class="materi-selection-radio">
+                </div>
+                <div class="materi-selection-card" onclick="selectMaterialFromPayment(this, 'Canva', 'canva')">
+                    <div class="materi-selection-icon">🎨</div>
+                    <h4>Desain Canva</h4>
+                    <p>Desain grafis mudah</p>
+                    <input type="radio" name="materiSelection" value="canva" class="materi-selection-radio">
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-info-section">
+            <h3>📚 Paket Pembayaran Kami</h3>
+            <p>Kami menyediakan tiga paket pembayaran yang fleksibel untuk memenuhi kebutuhan pembelajaran Anda dengan berbagai durasi akses dan fitur premium.</p>
+        </div>
+
+        <div class="pricing-packages-section">
+            <div class="package-item" onclick="selectPaymentPackage(this, 'reguler', 150000)">
+                <div class="package-item-header">
+                    <h4>Paket Reguler</h4>
+                    <span class="package-item-price">Rp 150.000</span>
+                </div>
+                <ul class="package-item-features">
+                    <li>✓ Akses Materi Lengkap</li>
+                    <li>✓ Video Tutorial (30 hari)</li>
+                    <li>✓ 1x Sesi Konsultasi</li>
+                    <li>✓ Sertifikat Digital</li>
+                </ul>
+                <input type="radio" name="packageOption" value="reguler" class="package-item-radio">
+            </div>
+
+            <div class="package-item featured-item" onclick="selectPaymentPackage(this, 'premium', 300000)">
+                <span class="package-item-badge">POPULER</span>
+                <div class="package-item-header">
+                    <h4>Paket Premium</h4>
+                    <span class="package-item-price">Rp 300.000</span>
+                </div>
+                <ul class="package-item-features">
+                    <li>✓ Akses Materi Lengkap</li>
+                    <li>✓ Video Tutorial (90 hari)</li>
+                    <li>✓ 4x Sesi Konsultasi</li>
+                    <li>✓ Sertifikat Digital</li>
+                    <li>✓ Akses Forum Eksklusif</li>
+                </ul>
+                <input type="radio" name="packageOption" value="premium" class="package-item-radio">
+            </div>
+
+            <div class="package-item" onclick="selectPaymentPackage(this, 'enterprise', 500000)">
+                <div class="package-item-header">
+                    <h4>Paket Enterprise</h4>
+                    <span class="package-item-price">Rp 500.000</span>
+                </div>
+                <ul class="package-item-features">
+                    <li>✓ Akses Materi Lengkap</li>
+                    <li>✓ Video Tutorial (Unlimited)</li>
+                    <li>✓ Unlimited Konsultasi</li>
+                    <li>✓ Sertifikat Digital + Cetak</li>
+                    <li>✓ Akses Forum Eksklusif</li>
+                    <li>✓ Support Priority</li>
+                </ul>
+                <input type="radio" name="packageOption" value="enterprise" class="package-item-radio">
+            </div>
+        </div>
+
+        <div class="payment-method-section">
+            <h3>Metode Pembayaran</h3>
+            <div class="payment-methods-container">
+                <div class="method-option" onclick="selectPaymentMethod(this, 'transfer')">
+                    <div class="method-icon">🏦</div>
+                    <h4>Transfer Bank</h4>
+                    <p>BCA, Mandiri, BNI</p>
+                </div>
+                <div class="method-option" onclick="selectPaymentMethod(this, 'card')">
+                    <div class="method-icon">💳</div>
+                    <h4>Kartu Kredit</h4>
+                    <p>Visa, Mastercard</p>
+                </div>
+                <div class="method-option" onclick="selectPaymentMethod(this, 'ewallet')">
+                    <div class="method-icon">📱</div>
+                    <h4>E-Wallet</h4>
+                    <p>GCash, Dana, OVO</p>
+                </div>
+                <div class="method-option" onclick="selectPaymentMethod(this, 'cash')">
+                    <div class="method-icon">💰</div>
+                    <h4>Tunai</h4>
+                    <p>Bayar di Kantor</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-summary-section">
+            <h3>Ringkasan Pembayaran</h3>
+            <div class="summary-box">
+                <div class="summary-item">
+                    <span>Materi yang dipilih:</span>
+                    <strong id="summaryMaterial">-</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Paket:</span>
+                    <strong id="summaryPackage">-</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Metode Pembayaran:</span>
+                    <strong id="summaryMethod">-</strong>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <strong id="summaryTotal">Rp 0</strong>
+                </div>
+            </div>
+            <button class="btn-checkout" onclick="proceedPayment()">Lanjutkan Pembayaran</button>
+        </div>
+    </div>
+</section>
+
+<div id="modalDataPembayaran" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modalDataPembayaran')">&times;</span>
+        <h2>Data Pembayaran</h2>
+        <p style="color: #666; margin-bottom: 25px;">Silakan lengkapi data diri Anda untuk melanjutkan pembayaran</p>
+        
+        <form id="formDataPembayaran">
+            <div class="form-group">
+                <label>Nama Lengkap <span style="color: #e74c3c;">*</span></label>
+                <input type="text" id="paymentNama" placeholder="Masukkan nama lengkap Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label>NPM <span style="color: #e74c3c;">*</span></label>
+                <input type="text" id="paymentNpm" placeholder="Contoh: 221001234" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email <span style="color: #e74c3c;">*</span></label>
+                <input type="email" id="paymentEmail" placeholder="nama@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Nomor Telepon <span style="color: #e74c3c;">*</span></label>
+                <input type="tel" id="paymentTelepon" placeholder="Contoh: 0812-3456-7890" required>
+            </div>
+
+            <div style="display: flex; gap: 15px; margin-top: 30px;">
+                <button type="button" class="btn-secondary full-width" onclick="closeModal('modalDataPembayaran')">Batal</button>
+                <button type="button" class="btn-main full-width" onclick="submitDataPembayaran()">Lanjutkan</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="modalKonfirmasiPembayaran" class="modal">
+    <div class="modal-content modal-confirmation-payment">
+        <span class="close" onclick="closeModal('modalKonfirmasiPembayaran')">&times;</span>
+        
+        <div class="confirmation-payment-header">
+            <div class="confirmation-payment-icon">✓</div>
+            <h2>Pembayaran Berhasil Diproses</h2>
+            <p>Terima kasih telah mendaftar di pelatihan kami!</p>
+        </div>
+
+        <div class="confirmation-payment-body">
+            <div class="confirmation-detail-box">
+                <h3>Detail Pembayaran</h3>
+                
+                <div class="detail-row">
+                    <span class="detail-label">ID Transaksi</span>
+                    <strong id="confirmTransactionId">TRX-2026-001</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Materi Pelatihan</span>
+                    <strong id="confirmMaterial">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Paket</span>
+                    <strong id="confirmPackage">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Metode Pembayaran</span>
+                    <strong id="confirmPaymentMethod">-</strong>
+                </div>
+
+                <div class="detail-row total-row">
+                    <span class="detail-label">Total Pembayaran</span>
+                    <strong id="confirmTotal">Rp 0</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span class="detail-label">Waktu Transaksi</span>
+                    <strong id="confirmTime">-</strong>
+                </div>
+            </div>
+
+            <div class="payment-instruction-box">
+                <h3>Instruksi Pembayaran</h3>
+                <div id="paymentInstructionContent" style="margin-top: 15px;">
+                    <!-- Konten instruksi akan ditampilkan berdasarkan metode pembayaran -->
+                </div>
+            </div>
+
+            <div class="next-steps-box">
+                <h3>Langkah Selanjutnya</h3>
+                <ol class="next-steps-list">
+                    <li>Selesaikan pembayaran sesuai metode yang dipilih</li>
+                    <li>Kirim bukti pembayaran ke email atau WhatsApp kami</li>
+                    <li>Tunggu konfirmasi dari admin (maksimal 1x24 jam)</li>
+                    <li>Akses materi pembelajaran akan dikirim melalui email</li>
+                </ol>
+            </div>
+
+            <div class="contact-info-box">
+                <h3>Hubungi Kami</h3>
+                <p>Email: <strong>info@uniska-labkomputer.ac.id</strong></p>
+                <p>WhatsApp: <strong>+62 812-3456-7890</strong></p>
+                <p>Jam Operasional: Senin - Jumat 08:00 - 16:00 WIB</p>
+            </div>
+        </div>
+
+        <div class="confirmation-payment-footer">
+            <button class="btn-back-home" onclick="backToHome()">Kembali ke Beranda</button>
+        </div>
+    </div>
+</div>
+
+<section id="kontak" class="page-section">
+    <h2>Hubungi Kami</h2>
+    <p style="margin-bottom: 40px; color: #666;">Kami siap membantu Anda untuk informasi lebih lanjut tentang program pelatihan kami</p>
+
+    <div class="contact-list">
+        <div class="contact-item">
+            <h3>Email</h3>
+            <p><a href="mailto:pelatihan@uniska-bjm.ac.id">pelatihan@uniska-bjm.ac.id</a></p>
+        </div>
+
+        <div class="contact-item">
+            <h3>WhatsApp</h3>
+            <p><a href="https://wa.me/6281234567890" target="_blank">+62 851-6667-6631</a></p>
+        </div>
+
+        <div class="contact-item">
+            <h3>Instagram</h3>
+            <p><a href="https://instagram.com/uniska_official" target="_blank">@labkom.uniska</a></p>
+        </div>
+
+        <div class="contact-item">
+            <h3>Jam Layanan</h3>
+            <p>Senin - Sabtu: 08:00 - 16:00 WITA<br>Jumat: 08:00 - 12:00 WITA<br>Minggu: Tutup</p>
+        </div>
+
+        <div class="contact-item">
+            <h3>Lokasi</h3>
+            <div class="maps-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.832860316436!2d114.59431726672211!3d-3.267667288836297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de42300110ba473%3A0xbf0e9092f194e353!2sGEDUNG%20BARU%20UNISKA%20AMBATRON!5e0!3m2!1sen!2sid!4v1768794705275!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p style="margin-top: 15px;">Lab Komputer UNISKA<br>Jl. Berangas Timur, Alalak, Barito Kuala, Kalimantan Selatan</p>
+        </div>
+    </div>
+</section>
+
+</main>
+</footer>
+<script src="testing.js"></script>
+</body>
+</html>

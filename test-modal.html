@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Modal</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 50px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 480px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Modal</h1>
+    <button onclick="openModal('modalDaftar')">Buka Modal Daftar</button>
+    <button onclick="openModal('modalLogin')">Buka Modal Login</button>
+
+    <div id="modalDaftar" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modalDaftar')">&times;</span>
+            <h2>Form Pendaftaran</h2>
+            <form id="formDaftar">
+                <input type="text" id="namaInput" placeholder="Nama" required>
+                <input type="text" id="npmInput" placeholder="NPM" required>
+                <input type="email" id="emailInput" placeholder="Email" required>
+                <select id="programInput">
+                    <option>Microsoft Office</option>
+                    <option>Google Sheets</option>
+                </select>
+                <button type="button" onclick="nextToPayment()">Lanjut ke Pembayaran</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalLogin" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal('modalLogin')">&times;</span>
+            <h2>Masuk ke Akun</h2>
+            <form id="formLogin">
+                <input type="text" id="loginIdentifier" placeholder="NPM/Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Masuk</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            console.log('Opening modal:', id);
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = "block";
+                console.log('Modal opened successfully');
+            } else {
+                console.error('Modal not found:', id);
+            }
+        }
+
+        function closeModal(id) {
+            console.log('Closing modal:', id);
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = "none";
+                console.log('Modal closed successfully');
+            } else {
+                console.error('Modal not found:', id);
+            }
+        }
+
+        function nextToPayment() {
+            alert('Fungsi nextToPayment dipanggil!');
+        }
+
+        // Event listeners
+        document.getElementById('formLogin').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form login disubmit!');
+        });
+
+        document.getElementById('formDaftar').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form daftar disubmit!');
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
